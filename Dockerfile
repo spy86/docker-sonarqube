@@ -2,7 +2,7 @@ FROM openjdk:8
 
 MAINTAINER Maciej Michalski "maciej.michalsk@gmail.com"
 
-ENV SONAR_VERSION=7.3 \
+ENV SONAR_VERSION=7.1 \
     SONARQUBE_HOME=/opt/sonarqube \
     # Database configuration
     # Defaults to using H2
