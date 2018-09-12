@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
@@ -7,7 +7,7 @@ if [ "${1:0:1}" != '-' ]; then
 fi
 
 chown -R sonarqube:sonarqube $SONARQUBE_HOME
-exec gosu sonarqube \
+exec su-exec sonarqube \
   java -jar lib/sonar-application-$SONAR_VERSION.jar \
   -Dsonar.log.console=true \
   -Dsonar.jdbc.username="$SONARQUBE_JDBC_USERNAME" \
