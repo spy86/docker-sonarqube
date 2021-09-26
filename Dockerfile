@@ -1,7 +1,5 @@
 FROM openjdk:8
 
-MAINTAINER Maciej Michalski "maciej.michalsk@gmail.com"
-
 ENV SONAR_VERSION=7.7 \
     SONARQUBE_HOME=/opt/sonarqube \
     SONARQUBE_JDBC_USERNAME=sonar \
