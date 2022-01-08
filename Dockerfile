@@ -6,7 +6,6 @@ ENV SONAR_VERSION=7.7 \
     SONARQUBE_JDBC_PASSWORD=sonar \
     SONARQUBE_JDBC_URL=
 
-# Http port
 EXPOSE 9000
 
 RUN groupadd -r sonarqube && useradd -r -g sonarqube sonarqube
