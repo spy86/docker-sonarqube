@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:17
 
 ENV SONAR_VERSION=7.7 \
     SONARQUBE_HOME=/opt/sonarqube \
