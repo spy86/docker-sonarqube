@@ -11,7 +11,7 @@ parameters:
 - name: Sonarqube_Version
   displayName: 'Sonarqube Version'
   type: string
-  default: 'false'
+  default: '9.4.0.54424'
 
 
 schedules:
@@ -35,7 +35,7 @@ variables:
   - name: image_name
     value: 'sonarqube'
   - name: sonarqube_version
-    value: '9.4.0.54424'
+    value: ${{parameters.Sonarqube_Version}}
 
 stages:
 - stage: Build
