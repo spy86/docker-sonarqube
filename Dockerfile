@@ -4,7 +4,7 @@ ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US:en' \
     LC_ALL='en_US.UTF-8'
 
-ARG SONARQUBE_VERSION=9.4.0.54424
+ARG SONARQUBE_VERSION
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONARQUBE_VERSION}.zip
 ENV JAVA_HOME='/usr/lib/jvm/java-11-openjdk' \
     PATH="/opt/java/openjdk/bin:$PATH" \

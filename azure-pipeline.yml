@@ -8,6 +8,11 @@ parameters:
   values:
     - true
     - false
+- name: Sonarqube_Version
+  displayName: 'Sonarqube Version'
+  type: string
+  default: 'false'
+
 
 schedules:
 - cron: "0 0 1 * *"
@@ -29,6 +34,8 @@ variables:
     value: '$(Build.BuildNumber)'
   - name: image_name
     value: 'sonarqube'
+  - name: sonarqube_version
+    value: '9.4.0.54424'
 
 stages:
 - stage: Build
@@ -48,6 +55,7 @@ stages:
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
+        arguments: '--build-arg SONARQUBE_VERSION=$(sonarqube_version)'
     - task: Docker@2
       displayName: Push an image
       inputs:
@@ -74,6 +82,7 @@ stages:
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: 'latest'
+        arguments: '--build-arg SONARQUBE_VERSION=$(sonarqube_version)'
     - task: Docker@2
       displayName: Push an image
       inputs:
@@ -99,3 +108,4 @@ stages:
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: 'latest'
+        arguments: '--build-arg SONARQUBE_VERSION=$(sonarqube_version)'
